@@ -1,0 +1,24 @@
+<configuration debug="true">
+
+    <timestamp key="byDay" datePattern="yyyy-MM-dd'T'HH-mm-ss"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>target\console-log\console.log </file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Define variable -->
+    <property name="root.logger.level" value="INFO"/>
+
+    <include resource="logback-include.xml"/>
+
+    <root level="${root.logger.level}">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="HTML-FILE-PER-TEST"/>
+    </root>
+
+</configuration>
