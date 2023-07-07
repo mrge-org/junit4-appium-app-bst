@@ -18,7 +18,7 @@
     <root level="${root.logger.level}">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
-        <appender-ref ref="HTML-FILE-PER-TEST"/>
+<!--        <appender-ref ref="HTML-FILE-PER-TEST"/>-->
     </root>
 
 </configuration>

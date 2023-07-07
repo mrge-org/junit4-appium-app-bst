@@ -44,25 +44,25 @@
 	</appender>
 	    
 	<!-- HTML Log File -->
-	<appender name="HTML-FILE-PER-TEST" class="ch.qos.logback.classic.sift.SiftingAppender">
-		<discriminator>
-			<key>testname</key>
-			<defaultValue>build/testrun</defaultValue>
-		</discriminator>
-		<sift>
-			<appender name="FILE-${testname}" class="ch.qos.logback.core.FileAppender">
-				<file>${testname}Log.html</file> <!-- location is determined by concordion.output.dir property in gradle.build file -->
-				<append>false</append>				
-				
-				<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
-					<layout class="org.concordion.logback.html.HTMLLayout">
-						<pattern>%level%message%date{HH:mm:ss.SSS}%file%line</pattern>
-						<stepRecorder>STEP_MARKER</stepRecorder> 	<!-- Options: STEP_MARKER, INFO_LOG_LEVEL, DEBUG_LOG_LEVEL -->
-					</layout>
-			    </encoder>
-			</appender>
-		</sift>
-	</appender>
+<!--	<appender name="HTML-FILE-PER-TEST" class="ch.qos.logback.classic.sift.SiftingAppender">-->
+<!--		<discriminator>-->
+<!--			<key>testname</key>-->
+<!--			<defaultValue>build/testrun</defaultValue>-->
+<!--		</discriminator>-->
+<!--		<sift>-->
+<!--			<appender name="FILE-${testname}" class="ch.qos.logback.core.FileAppender">-->
+<!--				<file>${testname}Log.html</file> &lt;!&ndash; location is determined by concordion.output.dir property in gradle.build file &ndash;&gt;-->
+<!--				<append>false</append>				-->
+<!--				-->
+<!--				<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">-->
+<!--					<layout class="org.concordion.logback.html.HTMLLayout">-->
+<!--						<pattern>%level%message%date{HH:mm:ss.SSS}%file%line</pattern>-->
+<!--						<stepRecorder>STEP_MARKER</stepRecorder> 	&lt;!&ndash; Options: STEP_MARKER, INFO_LOG_LEVEL, DEBUG_LOG_LEVEL &ndash;&gt;-->
+<!--					</layout>-->
+<!--			    </encoder>-->
+<!--			</appender>-->
+<!--		</sift>-->
+<!--	</appender>-->
 
 	<logger name="TcBase" level="${root.logger.level}"/>
 	<logger name="TestBase" level="${root.logger.level}"/>
